@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6cfa6f5431334706a8f282fb6ee44fc3" Name="Diagram1">
+        <EntityTypeShape EntityType="LanguageSchoolModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.ClientTag" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Document" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Employee" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.EmployeeCategory" Width="1.5" PointX="1.5" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.EmployeeService" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Manufacter" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Photo" Width="1.5" PointX="0.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Product" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.SaleProduct" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.SalesHistory" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.Service" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.ServicePhoto" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.SignUpService" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LanguageSchoolModel.SignUpServiceDocument" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__Client__ClientTa__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SalesHist__Clien__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SignUpSer__Clien__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SignUpSer__Docum__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__Employee__Employ__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__EmployeeS__Emplo__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__EmployeeS__Servi__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__Product__Manufac__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__ServicePh__Photo__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SaleProdu__Produ__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SaleProdu__Sales__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SalesHist__Servi__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__ServicePh__Servi__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SignUpSer__Servi__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="LanguageSchoolModel.FK__SignUpSer__SignU__46E78A0C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

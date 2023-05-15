@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LanguageSchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="FirstEnterDate" Type="datetime" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="ClientTagId" Type="int" />
+        </EntityType>
+        <EntityType Name="ClientTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Color" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="PasportSeries" Type="nvarchar(max)" />
+          <Property Name="PasportNumber" Type="nvarchar(max)" />
+          <Property Name="DivisionCode" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="PayCoefficient" Type="nvarchar(max)" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="EmployeeCategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EmployeeService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceId" Type="int" />
+          <Property Name="EmployeeId" Type="int" />
+        </EntityType>
+        <EntityType Name="Manufacter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartWorkDate" Type="datetime" />
+          <Property Name="MainPhoto" Type="nvarchar(max)" />
+          <Property Name="AdvancedPhoto" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="InsertDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="nvarchar(max)" />
+          <Property Name="Haracteristics" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Length" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="ManufacturerId" Type="int" />
+          <Property Name="IsNotActual" Type="bit" />
+        </EntityType>
+        <EntityType Name="SaleProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalesHistoryId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="SalesHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="int" />
+          <Property Name="ServiceId" Type="int" />
+          <Property Name="TransactionDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="GenderRecomented" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Cost" Type="nvarchar(max)" />
+          <Property Name="Sale" Type="int" />
+          <Property Name="Duration" Type="nvarchar(max)" />
+          <Property Name="MainPhoto" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ServicePhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceId" Type="int" />
+          <Property Name="PhotoId" Type="int" />
+        </EntityType>
+        <EntityType Name="SignUpService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="int" />
+          <Property Name="ServiceId" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="StartDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SignUpServiceDocument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SignUpServiceId" Type="int" />
+          <Property Name="DocumentId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Client__ClientTa__2F10007B">
+          <End Role="ClientTag" Type="Self.ClientTag" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientTag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="ClientTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__Employ__31EC6D26">
+          <End Role="EmployeeCategory" Type="Self.EmployeeCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Emplo__38996AB5">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeService" Type="Self.EmployeeService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeService">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Servi__37A5467C">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeService" Type="Self.EmployeeService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Manufac__34C8D9D1">
+          <End Role="Manufacter" Type="Self.Manufacter" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SaleProdu__Produ__4BAC3F29">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SaleProduct" Type="Self.SaleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SaleProdu__Sales__4AB81AF0">
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SaleProduct" Type="Self.SaleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleProduct">
+              <PropertyRef Name="SalesHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SalesHist__Clien__4316F928">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SalesHistory">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SalesHist__Servi__440B1D61">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SalesHistory">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePh__Photo__3C69FB99">
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ServicePhoto" Type="Self.ServicePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServicePhoto">
+              <PropertyRef Name="PhotoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePh__Servi__3B75D760">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ServicePhoto" Type="Self.ServicePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServicePhoto">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Clien__3F466844">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpService">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Docum__47DBAE45">
+          <End Role="Document" Type="Self.Document" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpServiceDocument" Type="Self.SignUpServiceDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpServiceDocument">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Servi__403A8C7D">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__SignU__46E78A0C">
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpServiceDocument" Type="Self.SignUpServiceDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignUpService">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpServiceDocument">
+              <PropertyRef Name="SignUpServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LanguageSchoolModelStoreContainer">
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientTag" EntityType="Self.ClientTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeCategory" EntityType="Self.EmployeeCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeService" EntityType="Self.EmployeeService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manufacter" EntityType="Self.Manufacter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleProduct" EntityType="Self.SaleProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesHistory" EntityType="Self.SalesHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicePhoto" EntityType="Self.ServicePhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignUpService" EntityType="Self.SignUpService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignUpServiceDocument" EntityType="Self.SignUpServiceDocument" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Client__ClientTa__2F10007B" Association="Self.FK__Client__ClientTa__2F10007B">
+            <End Role="ClientTag" EntitySet="ClientTag" />
+            <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Employ__31EC6D26" Association="Self.FK__Employee__Employ__31EC6D26">
+            <End Role="EmployeeCategory" EntitySet="EmployeeCategory" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Emplo__38996AB5" Association="Self.FK__EmployeeS__Emplo__38996AB5">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeeService" EntitySet="EmployeeService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Servi__37A5467C" Association="Self.FK__EmployeeS__Servi__37A5467C">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="EmployeeService" EntitySet="EmployeeService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Manufac__34C8D9D1" Association="Self.FK__Product__Manufac__34C8D9D1">
+            <End Role="Manufacter" EntitySet="Manufacter" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SaleProdu__Produ__4BAC3F29" Association="Self.FK__SaleProdu__Produ__4BAC3F29">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="SaleProduct" EntitySet="SaleProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SaleProdu__Sales__4AB81AF0" Association="Self.FK__SaleProdu__Sales__4AB81AF0">
+            <End Role="SalesHistory" EntitySet="SalesHistory" />
+            <End Role="SaleProduct" EntitySet="SaleProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SalesHist__Clien__4316F928" Association="Self.FK__SalesHist__Clien__4316F928">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="SalesHistory" EntitySet="SalesHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SalesHist__Servi__440B1D61" Association="Self.FK__SalesHist__Servi__440B1D61">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="SalesHistory" EntitySet="SalesHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePh__Photo__3C69FB99" Association="Self.FK__ServicePh__Photo__3C69FB99">
+            <End Role="Photo" EntitySet="Photo" />
+            <End Role="ServicePhoto" EntitySet="ServicePhoto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePh__Servi__3B75D760" Association="Self.FK__ServicePh__Servi__3B75D760">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="ServicePhoto" EntitySet="ServicePhoto" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Clien__3F466844" Association="Self.FK__SignUpSer__Clien__3F466844">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="SignUpService" EntitySet="SignUpService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Docum__47DBAE45" Association="Self.FK__SignUpSer__Docum__47DBAE45">
+            <End Role="Document" EntitySet="Document" />
+            <End Role="SignUpServiceDocument" EntitySet="SignUpServiceDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Servi__403A8C7D" Association="Self.FK__SignUpSer__Servi__403A8C7D">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="SignUpService" EntitySet="SignUpService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__SignU__46E78A0C" Association="Self.FK__SignUpSer__SignU__46E78A0C">
+            <End Role="SignUpService" EntitySet="SignUpService" />
+            <End Role="SignUpServiceDocument" EntitySet="SignUpServiceDocument" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LanguageSchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstEnterDate" Type="DateTime" Precision="3" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClientTagId" Type="Int32" />
+          <NavigationProperty Name="ClientTag" Relationship="Self.FK__Client__ClientTa__2F10007B" FromRole="Client" ToRole="ClientTag" />
+          <NavigationProperty Name="SalesHistories" Relationship="Self.FK__SalesHist__Clien__4316F928" FromRole="Client" ToRole="SalesHistory" />
+          <NavigationProperty Name="SignUpServices" Relationship="Self.FK__SignUpSer__Clien__3F466844" FromRole="Client" ToRole="SignUpService" />
+        </EntityType>
+        <EntityType Name="ClientTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK__Client__ClientTa__2F10007B" FromRole="ClientTag" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SignUpServiceDocuments" Relationship="Self.FK__SignUpSer__Docum__47DBAE45" FromRole="Document" ToRole="SignUpServiceDocument" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasportSeries" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasportNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PayCoefficient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeCategoryId" Type="Int32" />
+          <NavigationProperty Name="EmployeeCategory" Relationship="Self.FK__Employee__Employ__31EC6D26" FromRole="Employee" ToRole="EmployeeCategory" />
+          <NavigationProperty Name="EmployeeServices" Relationship="Self.FK__EmployeeS__Emplo__38996AB5" FromRole="Employee" ToRole="EmployeeService" />
+        </EntityType>
+        <EntityType Name="EmployeeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employee__Employ__31EC6D26" FromRole="EmployeeCategory" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="EmployeeService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceId" Type="Int32" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__EmployeeS__Emplo__38996AB5" FromRole="EmployeeService" ToRole="Employee" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__EmployeeS__Servi__37A5467C" FromRole="EmployeeService" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Manufacter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartWorkDate" Type="DateTime" Precision="3" />
+          <Property Name="MainPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdvancedPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__Manufac__34C8D9D1" FromRole="Manufacter" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ServicePhotoes" Relationship="Self.FK__ServicePh__Photo__3C69FB99" FromRole="Photo" ToRole="ServicePhoto" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Haracteristics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Length" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="ManufacturerId" Type="Int32" />
+          <Property Name="IsNotActual" Type="Boolean" />
+          <NavigationProperty Name="Manufacter" Relationship="Self.FK__Product__Manufac__34C8D9D1" FromRole="Product" ToRole="Manufacter" />
+          <NavigationProperty Name="SaleProducts" Relationship="Self.FK__SaleProdu__Produ__4BAC3F29" FromRole="Product" ToRole="SaleProduct" />
+        </EntityType>
+        <EntityType Name="SaleProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesHistoryId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Count" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__SaleProdu__Produ__4BAC3F29" FromRole="SaleProduct" ToRole="Product" />
+          <NavigationProperty Name="SalesHistory" Relationship="Self.FK__SaleProdu__Sales__4AB81AF0" FromRole="SaleProduct" ToRole="SalesHistory" />
+        </EntityType>
+        <EntityType Name="SalesHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" />
+          <Property Name="ServiceId" Type="Int32" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__SalesHist__Clien__4316F928" FromRole="SalesHistory" ToRole="Client" />
+          <NavigationProperty Name="SaleProducts" Relationship="Self.FK__SaleProdu__Sales__4AB81AF0" FromRole="SalesHistory" ToRole="SaleProduct" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__SalesHist__Servi__440B1D61" FromRole="SalesHistory" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GenderRecomented" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sale" Type="Int32" />
+          <Property Name="Duration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MainPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EmployeeServices" Relationship="Self.FK__EmployeeS__Servi__37A5467C" FromRole="Service" ToRole="EmployeeService" />
+          <NavigationProperty Name="SalesHistories" Relationship="Self.FK__SalesHist__Servi__440B1D61" FromRole="Service" ToRole="SalesHistory" />
+          <NavigationProperty Name="ServicePhotoes" Relationship="Self.FK__ServicePh__Servi__3B75D760" FromRole="Service" ToRole="ServicePhoto" />
+          <NavigationProperty Name="SignUpServices" Relationship="Self.FK__SignUpSer__Servi__403A8C7D" FromRole="Service" ToRole="SignUpService" />
+        </EntityType>
+        <EntityType Name="ServicePhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceId" Type="Int32" />
+          <Property Name="PhotoId" Type="Int32" />
+          <NavigationProperty Name="Photo" Relationship="Self.FK__ServicePh__Photo__3C69FB99" FromRole="ServicePhoto" ToRole="Photo" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__ServicePh__Servi__3B75D760" FromRole="ServicePhoto" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="SignUpService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="Int32" />
+          <Property Name="ServiceId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Client" Relationship="Self.FK__SignUpSer__Clien__3F466844" FromRole="SignUpService" ToRole="Client" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__SignUpSer__Servi__403A8C7D" FromRole="SignUpService" ToRole="Service" />
+          <NavigationProperty Name="SignUpServiceDocuments" Relationship="Self.FK__SignUpSer__SignU__46E78A0C" FromRole="SignUpService" ToRole="SignUpServiceDocument" />
+        </EntityType>
+        <EntityType Name="SignUpServiceDocument">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SignUpServiceId" Type="Int32" />
+          <Property Name="DocumentId" Type="Int32" />
+          <NavigationProperty Name="Document" Relationship="Self.FK__SignUpSer__Docum__47DBAE45" FromRole="SignUpServiceDocument" ToRole="Document" />
+          <NavigationProperty Name="SignUpService" Relationship="Self.FK__SignUpSer__SignU__46E78A0C" FromRole="SignUpServiceDocument" ToRole="SignUpService" />
+        </EntityType>
+        <Association Name="FK__Client__ClientTa__2F10007B">
+          <End Role="ClientTag" Type="Self.ClientTag" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Client" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientTag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Client">
+              <PropertyRef Name="ClientTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SalesHist__Clien__4316F928">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SalesHistory">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Clien__3F466844">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpService">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Docum__47DBAE45">
+          <End Role="Document" Type="Self.Document" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpServiceDocument" Type="Self.SignUpServiceDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Document">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpServiceDocument">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee__Employ__31EC6D26">
+          <End Role="EmployeeCategory" Type="Self.EmployeeCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Emplo__38996AB5">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeService" Type="Self.EmployeeService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeService">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmployeeS__Servi__37A5467C">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeService" Type="Self.EmployeeService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Manufac__34C8D9D1">
+          <End Role="Manufacter" Type="Self.Manufacter" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePh__Photo__3C69FB99">
+          <End Role="Photo" Type="Self.Photo" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ServicePhoto" Type="Self.ServicePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Photo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServicePhoto">
+              <PropertyRef Name="PhotoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SaleProdu__Produ__4BAC3F29">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SaleProduct" Type="Self.SaleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SaleProdu__Sales__4AB81AF0">
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SaleProduct" Type="Self.SaleProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SaleProduct">
+              <PropertyRef Name="SalesHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SalesHist__Servi__440B1D61">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SalesHistory">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ServicePh__Servi__3B75D760">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ServicePhoto" Type="Self.ServicePhoto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServicePhoto">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__Servi__403A8C7D">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpService">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SignUpSer__SignU__46E78A0C">
+          <End Role="SignUpService" Type="Self.SignUpService" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SignUpServiceDocument" Type="Self.SignUpServiceDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignUpService">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignUpServiceDocument">
+              <PropertyRef Name="SignUpServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LanguageSchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="ClientTags" EntityType="Self.ClientTag" />
+          <EntitySet Name="Documents" EntityType="Self.Document" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeeCategories" EntityType="Self.EmployeeCategory" />
+          <EntitySet Name="EmployeeServices" EntityType="Self.EmployeeService" />
+          <EntitySet Name="Manufacters" EntityType="Self.Manufacter" />
+          <EntitySet Name="Photos" EntityType="Self.Photo" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="SaleProducts" EntityType="Self.SaleProduct" />
+          <EntitySet Name="SalesHistories" EntityType="Self.SalesHistory" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServicePhotoes" EntityType="Self.ServicePhoto" />
+          <EntitySet Name="SignUpServices" EntityType="Self.SignUpService" />
+          <EntitySet Name="SignUpServiceDocuments" EntityType="Self.SignUpServiceDocument" />
+          <AssociationSet Name="FK__Client__ClientTa__2F10007B" Association="Self.FK__Client__ClientTa__2F10007B">
+            <End Role="ClientTag" EntitySet="ClientTags" />
+            <End Role="Client" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SalesHist__Clien__4316F928" Association="Self.FK__SalesHist__Clien__4316F928">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="SalesHistory" EntitySet="SalesHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Clien__3F466844" Association="Self.FK__SignUpSer__Clien__3F466844">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="SignUpService" EntitySet="SignUpServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Docum__47DBAE45" Association="Self.FK__SignUpSer__Docum__47DBAE45">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="SignUpServiceDocument" EntitySet="SignUpServiceDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee__Employ__31EC6D26" Association="Self.FK__Employee__Employ__31EC6D26">
+            <End Role="EmployeeCategory" EntitySet="EmployeeCategories" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Emplo__38996AB5" Association="Self.FK__EmployeeS__Emplo__38996AB5">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeeService" EntitySet="EmployeeServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmployeeS__Servi__37A5467C" Association="Self.FK__EmployeeS__Servi__37A5467C">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="EmployeeService" EntitySet="EmployeeServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Manufac__34C8D9D1" Association="Self.FK__Product__Manufac__34C8D9D1">
+            <End Role="Manufacter" EntitySet="Manufacters" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePh__Photo__3C69FB99" Association="Self.FK__ServicePh__Photo__3C69FB99">
+            <End Role="Photo" EntitySet="Photos" />
+            <End Role="ServicePhoto" EntitySet="ServicePhotoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SaleProdu__Produ__4BAC3F29" Association="Self.FK__SaleProdu__Produ__4BAC3F29">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SaleProduct" EntitySet="SaleProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SaleProdu__Sales__4AB81AF0" Association="Self.FK__SaleProdu__Sales__4AB81AF0">
+            <End Role="SalesHistory" EntitySet="SalesHistories" />
+            <End Role="SaleProduct" EntitySet="SaleProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SalesHist__Servi__440B1D61" Association="Self.FK__SalesHist__Servi__440B1D61">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="SalesHistory" EntitySet="SalesHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ServicePh__Servi__3B75D760" Association="Self.FK__ServicePh__Servi__3B75D760">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="ServicePhoto" EntitySet="ServicePhotoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__Servi__403A8C7D" Association="Self.FK__SignUpSer__Servi__403A8C7D">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="SignUpService" EntitySet="SignUpServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SignUpSer__SignU__46E78A0C" Association="Self.FK__SignUpSer__SignU__46E78A0C">
+            <End Role="SignUpService" EntitySet="SignUpServices" />
+            <End Role="SignUpServiceDocument" EntitySet="SignUpServiceDocuments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LanguageSchoolModelStoreContainer" CdmEntityContainer="LanguageSchoolEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="FirstEnterDate" ColumnName="FirstEnterDate" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="ClientTagId" ColumnName="ClientTagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientTags">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.ClientTag">
+              <MappingFragment StoreEntitySet="ClientTag">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="PasportSeries" ColumnName="PasportSeries" />
+                <ScalarProperty Name="PasportNumber" ColumnName="PasportNumber" />
+                <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PayCoefficient" ColumnName="PayCoefficient" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="EmployeeCategoryId" ColumnName="EmployeeCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeCategories">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.EmployeeCategory">
+              <MappingFragment StoreEntitySet="EmployeeCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeServices">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.EmployeeService">
+              <MappingFragment StoreEntitySet="EmployeeService">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacters">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Manufacter">
+              <MappingFragment StoreEntitySet="Manufacter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartWorkDate" ColumnName="StartWorkDate" />
+                <ScalarProperty Name="MainPhoto" ColumnName="MainPhoto" />
+                <ScalarProperty Name="AdvancedPhoto" ColumnName="AdvancedPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Photo">
+              <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Haracteristics" ColumnName="Haracteristics" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="ManufacturerId" ColumnName="ManufacturerId" />
+                <ScalarProperty Name="IsNotActual" ColumnName="IsNotActual" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleProducts">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.SaleProduct">
+              <MappingFragment StoreEntitySet="SaleProduct">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SalesHistoryId" ColumnName="SalesHistoryId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesHistories">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.SalesHistory">
+              <MappingFragment StoreEntitySet="SalesHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GenderRecomented" ColumnName="GenderRecomented" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="MainPhoto" ColumnName="MainPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePhotoes">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.ServicePhoto">
+              <MappingFragment StoreEntitySet="ServicePhoto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="PhotoId" ColumnName="PhotoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignUpServices">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.SignUpService">
+              <MappingFragment StoreEntitySet="SignUpService">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignUpServiceDocuments">
+            <EntityTypeMapping TypeName="LanguageSchoolModel.SignUpServiceDocument">
+              <MappingFragment StoreEntitySet="SignUpServiceDocument">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SignUpServiceId" ColumnName="SignUpServiceId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
